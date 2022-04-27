@@ -22,8 +22,8 @@ This is an implementation of upgradable smart contract using proxies
    
 3. Clone the repo:
    ```sh
-   git clone https://github.com/Aymen1001/proxy_upgradable_contracts.git
-   cd proxy_upgradable_contracts
+   git clone https://github.com/Aymen1001/proxy-upgradable-contracts.git
+   cd proxy-upgradable-contracts
    ```
 
 4. Set your environment variables:
