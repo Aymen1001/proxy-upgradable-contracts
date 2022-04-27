@@ -41,7 +41,7 @@ To upgrade the Box contract to BoxV2 on development network, run the command :
    ```
 To use upgrade on real testnets (kovan, rinkbey,...), run the command :
    ```sh
-   brownie run scripts/upgrade_box_contract.py --network=<< testnet name>>
+   brownie run scripts/upgrade_box_contract.py --network=<testnet name>
    ```
 ### Testing:
 
