@@ -4,7 +4,9 @@ This is an implementation of upgradable smart contract using proxies
 ## Overview:
    
    Everyone in the blockchain world knows that smart contracts are immutable, meaning that once they are deployed on chain their core logic can't be changed. So developers must perform all the tests and verify every line of code in order to avoid mistakes or bugs which may lead to vulnerabilities inside the protocol. 
+   <br/>
    But what if a major breakthrough happens in DEFI ecosystem for example, what if there is a new way to use automated market makers, a protocol like AAVE will need to create a new set of smart contracts and thus change the previous addresses, which means that other protocols that rely on AAVE would have to update their dapps and this could create a big mess.
+   <br/>
    For this purpose, developers have created a way to upgrade a smart contract - not realy upgrade but almost - using something called PROXY, a proxy is contract that holds all the deployements of a given protocol (versions of the protocol), and when a user make a call the proxy automatically redirect the call to the latest implementation. So in order to "Upgrade" a smart contract the admin (or the DAO) need to deploy the new version and then add it to the proxy, ET VOILA the smart contract has been upgraded.
    
    In this repo, i created a simple pattern for upgrading smart contract using OpenZeppelin and i tested it on Box.sol and BoxV2.sol
