@@ -56,13 +56,13 @@ def test_upgrade_proxy():
         {"from": account}
     )
 
-    box_v2 = BoxV2.deploy({"from": account})
-
-    box_proxy = get_contract(BoxV2, proxy.address)
+    box_proxy = get_contract(Box, proxy.address)
 
     with pytest.raises(exceptions.VirtualMachineError):
         set_tx = box_proxy.increment(5, {"from": account})
         set_tx.wait(1)
+    
+    box_v2 = BoxV2.deploy({"from": account})
 
     upgrade(
         account=account,
@@ -73,7 +73,7 @@ def test_upgrade_proxy():
 
     box_proxy = get_contract(BoxV2, proxy.address)
 
-    assert box_proxy.getValue() == box.getValue()
+    assert box_proxy.getValue() == 0
 
     set_tx = box_proxy.increment(5, {"from": account})
     set_tx.wait(1)
