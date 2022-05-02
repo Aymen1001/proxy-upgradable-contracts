@@ -55,14 +55,14 @@ def test_upgrade_proxy():
         encoded_initializer,
         {"from": account}
     )
+    
+    box_v2 = BoxV2.deploy({"from": account})
 
-    box_proxy = get_contract(Box, proxy.address)
+    box_proxy = get_contract(BoxV2, proxy.address)
 
     with pytest.raises(exceptions.VirtualMachineError):
         set_tx = box_proxy.increment(5, {"from": account})
         set_tx.wait(1)
-    
-    box_v2 = BoxV2.deploy({"from": account})
 
     upgrade(
         account=account,
