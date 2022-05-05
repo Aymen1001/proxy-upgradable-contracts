@@ -27,7 +27,11 @@ This is an implementation of upgradable smart contract using proxies
     ```
     pip install eth-brownie
     ```
-   
+   Install [ganache-cli](https://www.npmjs.com/package/ganache-cli): 
+   ```sh
+    npm install -g ganache-cli
+    ```
+    
 3. Clone the repo:
    ```sh
    git clone https://github.com/Aymen1001/proxy-upgradable-contracts.git
